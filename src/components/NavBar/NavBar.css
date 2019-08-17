@@ -1,0 +1,36 @@
+.NavBar {
+  /* background-image: linear-gradient(rgb(22, 56, 110), rgb(21, 63, 131)); */
+  background-color: rgb(22, 56, 110);
+  color: rgb(255, 255, 255);
+}
+
+.Nav {
+  margin-right: "80%";
+}
+
+.NavBrand {
+  margin-left: 2rem;
+  /* font-family: "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial,
+        sans-serif; */
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.NavBrand:hover {
+  color: rgb(255, 255, 255);
+}
+
+.NavLink {
+  color: rgb(255, 255, 255);
+  /* font-family: "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial,
+        sans-serif; */
+  font-weight: 900;
+  /* margin-right: 2rem; */
+  /* text-decoration: none; */
+}
+
+.NavLink:hover {
+  color: rgb(255, 255, 255);
+}
