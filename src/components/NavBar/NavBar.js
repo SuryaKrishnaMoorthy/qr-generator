@@ -10,7 +10,13 @@ export default class NavBar extends Component {
                   <NavbarBrand className="NavBrand" href="/">QR Code Generator</NavbarBrand>
                   <Nav style={{marginRight: "10%"}} className="ml-auto Nav" navbar>
                     <NavItem>
-                      <NavLink className="NavLink" href="/">Create Form</NavLink>
+                      {
+                        this.props.userName 
+                        ? 
+                        <NavLink className="NavLink" href="/">Create Form</NavLink>
+                        :
+                        <NavLink className="NavLink" href="/">Login/SignUp</NavLink>
+                        }
                     </NavItem>
                   </Nav>
               </Navbar>
