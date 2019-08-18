@@ -1,20 +1,23 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import { AzureAD, LoginType, MsalAuthProviderFactory } from 'react-aad-msal';
 import { Button } from "reactstrap";
 
+import { userLoginSuccess, userLogout } from "../../actions/auth";
 class Login extends Component {
-    state = {
-        userInfo: null
-    }
-
+    
     loginCallback = login => {
-        return <Button onClick={login}>Login</Button>;
+        console.log("hi");
+        
+        return <Button style={{ marginTop: "5%"}} onClick={login}>Login</Button>;
     };
     
-    printAccountInfo = accountInfo => {
+    printAccountInfo = (accountInfo, { dispatch }) => {
         console.log(accountInfo);
         const userInfo = accountInfo.account.userName;
         this.setState({userInfo});
+        dispatch(this.props.userLoginSuccess(userInfo))
     };
 
     logoutCallback = logout => {
@@ -22,7 +25,7 @@ class Login extends Component {
         return (
             <div>
             You're logged in
-            <Button onClick={logout}>Logout</Button>
+            <Button style={{ marginTop: "5%"}} onClick={logout}>Logout</Button>
             </div>
         );
     };
@@ -58,4 +61,8 @@ class Login extends Component {
     }
 }
 
-export default Login;
+// const mapStateToProps = (state) => ({ user: state.user })
+  
+// const mapDispatchToProps = (dispatch) => bindActionCreators({ userLoginSuccess, userLogout }, dispatch)
+
+export default connect(null, mapDispatchToProps)(Login);

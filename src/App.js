@@ -10,8 +10,8 @@ import QrCode from "./components/QrCode/QrCode";
 function App() {
   return (
     <div>
+      <Nav />
       <Switch>
-        <Nav />
         <Route exact path="/" component={Login} /> 
         <Route path="/form" component={QrForm} />
         <Route path="/qr-code" component={QrCode} />
